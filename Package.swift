@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "Instantiate",
-            path: "Sources"
+            path: "Sources/Instantiate"
         ),
     ]
 )
