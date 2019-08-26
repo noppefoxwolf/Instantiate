@@ -1,22 +1,21 @@
-// swift-tools-version:3.1
-
+// swift-tools-version:5.1
 import PackageDescription
-import Foundation
-
-let libralies = [
-    Target(
-        name: "Instantiate"
-    ),
-    Target(
-        name: "InstantiateStandard",
-        dependencies: [
-            .Target(name: "Instantiate")
-        ]
-    )
-]
 
 let package = Package(
     name: "Instantiate",
-    targets: libralies,
-    swiftLanguageVersions: [3, 4]
+    platforms: [
+      .iOS(.v10), .macOS(.v10_12)
+    ],
+    products: [
+        .library(
+            name: "Instantiate",
+            targets: ["Instantiate"]
+        )
+    ],
+    targets: [
+        .target(
+            name: "Instantiate",
+            path: "Sources"
+        ),
+    ]
 )
